@@ -1,6 +1,6 @@
 # Terraform Example: Creating a Grafana Cloud SLO
 
-This repository demonstrates how to define and deploy a Service Level Objective (SLO) in [Grafana Cloud](https://grafana.com/cloud) using Terraform’s [Grafana Provider](https://registry.terraform.io/providers/grafana/grafana/latest). By following the steps below, you can replicate this process on your own Grafana Cloud instance.
+This repository demonstrates how to define and deploy a Service Level Objective (SLO) in [Grafana Cloud](https://grafana.com/docs/grafana-cloud/) using Terraform’s [Grafana Provider](https://registry.terraform.io/providers/grafana/grafana/latest/docs). By following the steps below, you can replicate this process on your own Grafana Cloud instance.
 
 ## Table of Contents
 
@@ -34,13 +34,26 @@ Once applied, you’ll have an SLO called **“Tupper - Terraform Ratio Query Ex
    - [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) (v0.14 or later recommended).
 
 2. **Grafana Cloud Account**  
-   - You need an existing [Grafana Cloud](https://grafana.com/cloud) instance.
+   - You need an existing [Grafana Cloud](https://grafana.com/docs/grafana-cloud/get-started/) instance.
 
 3. **Grafana API Token**  
    - This token must have the necessary permissions (e.g., admin-level or specific permissions to create SLOs/alerts).  
-   - [How to create a Grafana Cloud API token](https://grafana.com/docs/grafana-cloud/billing-and-usage/organizations/#api-keys).
+   - [How to create a Grafana Cloud API token](https://grafana.com/docs/grafana/latest/administration/service-accounts/).
 
 ---
 
 ## Repository Structure
+. ├── main.tf ├── slo.tf └── secrets.tfvars
 
+
+- **`main.tf`**  
+  Declares the Terraform and Grafana provider configuration, including a placeholder for the Grafana Cloud URL and the `grafana_api_token` variable.
+
+- **`slo.tf`**  
+  Defines the SLO resource (`grafana_slo`) with:
+  - **Ratio query** metrics (`success_metric` and `total_metric`).  
+  - Labels and annotations for alerting.  
+  - Objectives and burn rate alert configurations.
+
+- **`secrets.tfvars`**  
+  Contains your **API token** (and potentially other secrets). **Do not commit** this file to source control.
