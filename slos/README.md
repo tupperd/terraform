@@ -43,8 +43,6 @@ Once applied, you’ll have an SLO called **“Tupper - Terraform Ratio Query Ex
 ---
 
 ## Repository Structure
-. ├── main.tf ├── slo.tf └── secrets.tfvars
-
 
 - **`main.tf`**  
   Declares the Terraform and Grafana provider configuration, including a placeholder for the Grafana Cloud URL and the `grafana_api_token` variable.
