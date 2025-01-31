@@ -7,14 +7,6 @@ This repository demonstrates how to define and deploy a Service Level Objective 
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [Repository Structure](#repository-structure)
-- [Setup & Usage](#setup--usage)
-  - [1. Clone and Initialize](#1-clone-and-initialize)
-  - [2. Configure Secrets](#2-configure-secrets)
-  - [3. Deploy with Terraform](#3-deploy-with-terraform)
-- [SLO Details](#slo-details)
-- [Cleanup](#cleanup)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
 
 ---
 
